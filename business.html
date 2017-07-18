@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta  name="keywords" content="关键字seo"/>
+		<meta name="description" content="网站的描述"/>
+		<title>东方电子商务协会</title>
+		<link rel="stylesheet" href="css/business.css" />
+	</head>
+	<body>
+		<!--web header-->
+		<div class="header">
+			<div class="header_content">
+				<h1>东方电子商务协会</h1>
+				<div class="header_nav">
+					<a href="#">设为首页</a>　|　
+					<a href="#">加入收藏</a>　|　
+					<a href="#">联系我们</a>
+				</div>
+			</div>
+		</div>
+		<!--web nav/search-->
+		<div class="navsearch">
+			<div class="navs">
+				<div class="nav">                                          
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">关于协会</a></li>
+						<li><a href="#">行业动态</a></li>
+						<li><a href="#">协会动态</a></li>
+						<li><a href="#">政策法规</a></li>
+						<li><a href="#">人才服务</a></li>
+						<li><a href="#">会员之家</a></li>
+						<li class="noline"><a href="#">联系我们</a></li>
+					</ul>
+				</div>
+				<div class="search">
+					<form action="">
+						<input type="text" />
+						<input type="button"  class="btn"/>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<!--web banner/ad-->
+		<div id="banner">
+			<ul>
+				<li style="opacity: 1;"><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+			<ol>
+				<li class="active">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+			<a href="javascript:;" id="left">prev</a>
+			<a href="javascript:;" id="right">next</a>
+		</div>
+		
+		
+		<script type="text/javascript">
+		//1、获取元素
+		var oBanner=document.getElementById('banner');
+		var aBtn=oBanner.getElementsByTagName('ol')[0].getElementsByTagName('li');
+		var aImg=oBanner.getElementsByTagName('ul')[0].getElementsByTagName('li');
+		var left=document.getElementById('left');
+		var right=document.getElementById('right');
+		var num=0;
+		//2、按钮添加事件	
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].xxx=i;
+			aBtn[i].onclick=function(){
+				num=this.xxx;//num:当前的索引（下标）
+				tab();
+			}
+		}
+		function tab(){
+			for(var j=0;j<aBtn.length;j++){
+				aBtn[j].className='';
+				aImg[j].style.opacity=0;
+			}
+			aBtn[num].className='active';
+			aImg[num].style.opacity=1;
+		}
+		left.onclick=function(){
+			if(num<=0){
+				num=aBtn.length-1;
+			}else{
+				num--;
+			}
+			tab();
+		}
+		right.onclick=function(){
+			if(num>=aBtn.length-1){
+				num=0;
+			}else{
+				num++;
+			}
+			tab();
+		}
+		
+		var timer=setInterval(function(){
+			right.onclick();
+		},2000);
+		
+		oBanner.onmouseover=function(){
+			clearInterval(timer);
+		}
+		oBanner.onmouseout=function(){
+			timer=setInterval(function(){
+				right.onclick();
+			},2000);
+		}
+		</script>
+		<!--web content/main-->
+		<div class="main">
+			<div class="main_content clearfix"><!--主要的内容区-->
+				<div class="mtop clearfix">
+					<div class="mtopleft">
+						<div class="m1">
+							<div class="title">
+								<h2>行业动态<span>Industry dynamics</span></h2>
+								<a href="#">MORE</a>
+							</div>
+							<div class="img1">
+								<img src="img/new1.jpg" alt="" />
+								<p>详解商家备战双十一要点</p>
+							</div>
+							<div class="newslist">
+							</div>
+							<script type="text/javascript">
+								var str='<ul>';
+								for(var i=0;i<6;i++){
+									str=str+'<li><a href="#">协会带领苏州吴中区常务副...</a><span>2013-09-06</span></li>';
+								}
+								str=str+'</ul>';
+								document.getElementsByClassName('newslist')[0].innerHTML=str;
+							</script>
+						</div>
+						<div class="m1">
+							<div class="title">
+								<h2>协会动态<span>Industry dynamics</span></h2>
+								<a href="#">MORE</a>
+							</div>
+							<div class="img1">
+								<img src="img/new2.jpg" alt="" />
+								<p>详解商家备战双十一要点</p>
+							</div>
+							<div class="newslist">
+								<ul>
+									<li><a href="#">协会带领苏州吴中区常务副...</a><span>2013-09-06</span></li>
+									<li><a href="#">2013 Oracle技术高峰论坛—大...</a><span>2013-07-03</span></li>
+									<li><a href="#">参观绿城电商体验馆暨业总结… </a><span>2013-06-27</span></li>
+									<li><a href="#">组织接待济南市电子商务协习考察 </a><span>2013-06-26</span></li>
+									<li><a href="#">会员企业合作共赢交流研讨总结</a><span>2013-06-25</span></li>
+									<li><a href="#">2013杭州电子商务行业峰焦变化...</a><span>2013-06-05</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="m3">
+							<div class="title">
+								<h2>协会动态<span>Industry dynamics</span></h2>
+								<a href="#">MORE</a>
+							</div>
+							<div class="imglist">
+								<img src="img/1111.jpg" alt="" />
+								<div class="infonews">
+									<a href="#">详解商家备战双十一要点</a>
+									<p>阿里巴巴集团COO张勇前几天与部分商家开了一场2013天猫1111购物狂欢节闭门沟通会，详...</p>
+								</div>
+							</div>
+							<div class="newslist">
+								<ul>
+									<li><a href="#">协会带领苏州吴中区常务副...</a><span>2013-09-06</span></li>
+									<li><a href="#">2013 Oracle技术高峰论坛—大...</a><span>2013-07-03</span></li>
+									<li><a href="#">参观绿城电商体验馆暨业总结… </a><span>2013-06-27</span></li>
+									<li><a href="#">组织接待济南市电子商务协习考察 </a><span>2013-06-26</span></li>
+									<li><a href="#">会员企业合作共赢交流研讨总结</a><span>2013-06-25</span></li>
+									<li><a href="#">2013杭州电子商务行业峰焦变化...</a><span>2013-06-05</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="m4">
+							<div class="title">
+								<h2>协会动态<span>Industry dynamics</span></h2>
+								<a href="#">MORE</a>
+							</div>
+							<div class="img1">
+								<img src="img/new3.jpg" alt="" />
+								<p>详解商家备战双十一要点</p>
+							</div>
+							<div class="newtitle">
+								<h3>会员企业合作共赢交流研讨总结 </h3>
+								<p>帮助客户在互联网上实现品牌价值提升，我们从来不用任何营销技巧和…<a href="#">【详细】</a></p>
+							</div>
+							<div class="businessnews">
+								<ul>
+									<li><span>[网络营销]</span><a href="#">组织接待济南市电子商务协习考察...</a></li>
+									<li><span>[电子商务]</span><a href="#">组织接待济南市电子商务协习考察...</a></li>
+									<li><span>[电子商务]</span><a href="#">组织接待济南市电子商务协习考察...</a></li>
+									<li><span>[网络营销]</span><a href="#">美法官批准Facebook 2000万...</a></li> 
+								</ul>
+							</div>
+						</div>
+						<div class="m5">
+							<div class="title">
+								<h2>新闻中心<span>Industry dynamics</span></h2>
+								<a href="#">MORE</a>
+							</div>
+							<div class="newslist" id="haha">
+								<!--<ul>
+									<li><a href="#">协会带领苏州吴中区常务副...</a><span>2013-09-06</span></li>
+									<li><a href="#">2013 Oracle技术高峰论坛—大...</a><span>2013-07-03</span></li>
+									<li><a href="#">参观绿城电商体验馆暨业总结… </a><span>2013-06-27</span></li>
+									<li><a href="#">组织接待济南市电子商务协习考察 </a><span>2013-06-26</span></li>
+									<li><a href="#">会员企业合作共赢交流研讨总结</a><span>2013-06-25</span></li>
+									<li><a href="#">2013杭州电子商务行业峰焦变化...</a><span>2013-06-05</span></li>
+									<li><a href="#">协会带领苏州吴中区常务副...</a><span>2013-09-06</span></li>
+									<li><a href="#">2013 Oracle技术高峰论坛—大...</a><span>2013-07-03</span></li>
+								</ul>-->
+								<script type="text/javascript">
+									var xhr1=new XMLHttpRequest();
+									xhr1.open('get','http://127.0.0.1/chengdu/day%2006/php2.php',true);
+									xhr1.send();
+									xhr1.onreadystatechange=function(){
+										if(xhr1.readyState==4){
+											if(xhr1.status==200){
+												var arr1=JSON.parse(xhr1.responseText);
+												var str1='<ul>';
+												for(var i=0;i<arr1.length;i++){
+													str1+='<li><a href="#">'+arr1[i].title+'</a><span>'+arr1[i].date+'</span></li>'
+												}
+												str1+='</ul>';
+												document.getElementById('haha').innerHTML=str1;
+											}else{
+												alert('接口地址错误！');
+											}
+										}
+									}
+							</script>
+							</div>
+						</div>
+						<div class="m6">
+							<div class="title">
+								<h2>协会动态<span>Industry dynamics</span></h2>
+								<a href="#">MORE</a>
+							</div>
+							<div class="about">
+								<img src="img/about.jpg" alt="" />
+								<p><strong>东部湾电子商务协会</strong>是由杭州市经济信息中心、阿里巴巴（中国）
+									                        网络技术公司、杭州科希盟科技有
+									                        限公司、杭州市邮政投递服务公司、
+									                        浙江华立集团、杭州祐康电子商务
+									                        网络有限公司六从事电子商务研究
+									                        开发、应用等相关领域的企事业单
+									位和个人自愿结合组成的地方性、联合性、非营利性社团组织，
+									经杭州市民政局批准，2002年7月正式成立…<a href="#">【详细】</a>
+								</p>
+							</div>
+							<div class="link">
+								<a href="##">2012年协会大事记</a>	      
+								<a href="##">2011年协会大事记</a>
+								<a href="##">2010年协会大事件</a>      	
+								<a href="##">2009年协会大事件</a>	
+							</div>
+						</div>
+					</div>
+					<div class="mtopright">
+						<div class="login"></div>
+						<div class="blog"><img src="img/blog.jpg" alt="" /></div>
+						<div class="ad"><img src="img/business.jpg" alt="" /></div>
+						<div class="contact">
+							<div class="title">
+								<h2>联系我们</h2>
+							</div>
+							<img src="img/sevice.jpg" alt="" />
+							<ul>
+								<li>电话: 0571-88155188</li>
+								<li>手机：18621971186</li>
+								<li>邮箱：yhdn@jjdf.com</li>
+								<li>工作时间: 周一至周五 9:00-18:00</li>
+								<li>地址：上海市闵行区马桥镇新街北
+								松公路2239弄59号</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="mbottom">
+					<div class="mtitle">
+						<h2>精彩图文<span>Industry dynamics</span></h2>
+						<a href="#">MORE</a>
+					</div>
+					<div class="mcontent">
+						<div class="mimglist clearfix" id="hehe">
+							<script type="text/javascript">
+								var xhr=new XMLHttpRequest();
+								xhr.open('get','http://127.0.0.1/chengdu/day%2006/php1.php',true);
+								xhr.send();
+								xhr.onreadystatechange=function(){
+									if(xhr.readyState==4){
+										if(xhr.status==200){
+											var arr=JSON.parse(xhr.responseText);
+											var str='<ul>';
+											
+											for(var i=0;i<6;i++){
+												str+='<li>'+
+														'<img src="'+arr[i].url+'" alt="" width="143" height="106"/>'+
+														'<p>'+arr[i].title+'</p>'+
+													'</li>';
+											}
+											for(var i=0;i<6;i++){
+												str+='<li>'+
+														'<img src="'+arr[i].url+'" alt="" width="143" height="106"/>'+
+														'<p>'+arr[i].title+'</p>'+
+													'</li>';
+											}
+											
+											str+='</ul>';
+											
+											document.getElementById('hehe').innerHTML=str;
+										}else{
+											alert('接口地址错误！');
+										}
+									}
+								}
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--web footer-->
+		<div class="footer">
+			<p>
+				<a href="">关于我们</a>　|　<a href="">联系方式</a>　|　<a href="">入会须知</a>　|　<a href="">友情链接</a>
+			</p>
+			<p>
+				Powered by 东部湾电子商务协会 V9.3.2 &copy; 2011
+			</p>
+		</div>
+	</body>
+</html>
